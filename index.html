@@ -6,27 +6,26 @@
 <meta name="theme-color" content="#061426">
 <title>Currency Calculator — THB MMK CNY</title>
 <style>
-:root{--bg:#020a15;--panel:#07182b;--panel2:#0b2138;--line:#244967;--blue:#168cff;--cyan:#36c9ff;--green:#24f0b1;--text:#f4f8ff;--muted:#9bb0c6;--shadow:0 25px 80px #0009}
-*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;color:var(--text);font-family:Inter,"Noto Sans Myanmar","Segoe UI",sans-serif;background:radial-gradient(circle at 75% 0,#0d4d8d55,transparent 28%),radial-gradient(circle at 0 90%,#007b8050,transparent 24%),linear-gradient(135deg,#020711,#06162a 52%,#03101b);min-height:100vh}
-body:before{content:"";position:fixed;inset:0;pointer-events:none;opacity:.22;background-image:linear-gradient(#168cff12 1px,transparent 1px),linear-gradient(90deg,#168cff12 1px,transparent 1px);background-size:42px 42px;mask-image:linear-gradient(to bottom,#000,transparent 80%)}
-.wrap{width:min(1180px,94vw);margin:auto;padding:30px 0 55px}.top{display:flex;align-items:center;gap:16px;margin-bottom:20px}.brandicon{font-size:46px;filter:drop-shadow(0 0 18px #19aaff55)}h1{font-size:34px;margin:0;font-weight:900;letter-spacing:-1px}h1 b{color:#48baff}.sub{color:#a9bdd0;margin-top:5px;font-size:14px}.theme{margin-left:auto;border:1px solid #2b5272;background:#09203a;color:#fff;border-radius:50%;width:46px;height:46px;font-size:20px;cursor:pointer}
-.layout{display:grid;grid-template-columns:minmax(0,1.35fr) minmax(300px,.65fr);gap:16px}.glass{background:linear-gradient(145deg,#0a2038e8,#04101fe8);border:1px solid #285274;border-radius:22px;box-shadow:var(--shadow),inset 0 1px #ffffff12;backdrop-filter:blur(14px)}.main{padding:22px}.side{padding:18px}
-.section{margin-bottom:20px}.label{font-size:15px;font-weight:850;margin-bottom:9px}.label span{color:#69bfff}
-.pair{display:grid;grid-template-columns:1fr 58px 1fr;gap:10px;align-items:center}.select{width:100%;appearance:auto;padding:15px 13px;border:1px solid #335c7d;border-radius:13px;background:#061629;color:#fff;font-size:15px;outline:0}.swap{height:50px;border:1px solid #315879;border-radius:13px;background:linear-gradient(145deg,#12304c,#07192c);color:#fff;font-size:23px;cursor:pointer}
-.input{width:100%;padding:17px 16px;border:1px solid #315a7b;border-radius:13px;background:#061628;color:#fff;font-size:24px;outline:0}.input:focus,.select:focus{border-color:#2aa7ff;box-shadow:0 0 0 3px #168cff1c}.hint{margin-top:9px;border:1px solid #00dca57a;background:linear-gradient(145deg,#003d3544,#002a2a22);border-radius:13px;padding:12px 14px;line-height:1.65;color:#dffff5;font-size:14px}.hint strong{color:var(--green);font-size:17px}
-.result{border:1px solid #00e5ad99;background:linear-gradient(145deg,#003c303d,#001e2529);border-radius:16px;padding:18px;box-shadow:0 0 35px #00dca51a}.result small{color:#b9d4d0;font-weight:750}.num{font-size:clamp(34px,5vw,55px);font-weight:950;color:var(--green);line-height:1.05;margin-top:6px;word-break:break-word;text-shadow:0 0 22px #00e5a633}.unit{font-size:23px;font-weight:900;margin-top:5px}.formula{margin-top:10px;color:#d5eee9;font-size:14px}.actions{display:grid;grid-template-columns:1fr 1.45fr;gap:10px;margin-top:13px}.btn{padding:14px;border-radius:12px;border:1px solid #5a7188;background:#07192b;color:#fff;font-weight:850;font-size:15px;cursor:pointer}.primary{background:linear-gradient(135deg,#087cff,#075de0);border-color:#2396ff}.btn:active,.swap:active{transform:translateY(1px)}
-.side h2{font-size:18px;margin:0 0 13px}.ratecard{padding:14px 0;border-bottom:1px solid #24445d}.ratecard:last-child{border-bottom:0}.ratehead{display:flex;justify-content:space-between;gap:8px;font-weight:800}.ratevalue{color:#bfeaff;font-size:13px;margin-top:5px}.dot{color:#25e7a9}.guide{margin-top:16px}.guidebox{background:#0a1f35;border:1px solid #254c6c;border-radius:12px;padding:12px;margin-top:8px;font-size:13px;line-height:1.6}.guidebox b{color:#5fc5ff}.example{margin-top:16px}.ex{border:1px solid #214e72;border-radius:12px;padding:12px;margin-top:8px;background:#06192c}.ex strong{color:var(--green)}.note{color:#8fa6bb;font-size:11px;line-height:1.6;margin-top:14px}
-.badge{display:inline-flex;align-items:center;gap:6px;color:#a9c8dd;font-size:11px;border:1px solid #294c69;padding:7px 10px;border-radius:99px;background:#07182a}.badge i{width:7px;height:7px;background:#20e5a5;border-radius:50%;box-shadow:0 0 10px #20e5a5}
-@media(max-width:820px){.layout{grid-template-columns:1fr}.side{order:2}.wrap{padding-top:18px}.top h1{font-size:27px}}
-@media(max-width:560px){.wrap{width:94vw}.top{gap:10px}.brandicon{font-size:34px}h1{font-size:23px}.sub{font-size:11px}.theme{width:42px;height:42px}.main{padding:15px}.side{padding:15px}.pair{grid-template-columns:1fr 45px 1fr;gap:6px}.select{font-size:13px;padding:13px 8px}.swap{height:46px}.input{font-size:20px;padding:15px}.num{font-size:36px}.actions{grid-template-columns:1fr 1.25fr}}
-.light{--bg:#eef5fa;--panel:#fff;--text:#0c1b28;--muted:#5f7487}.light body{background:linear-gradient(135deg,#edf6ff,#dcecf7)}.light .glass{background:#ffffffdc;border-color:#b8d0e2}.light .select,.light .input,.light .swap,.light .btn{background:#f5f9fc;color:#0c1b28}.light .hint{color:#104438}.light .guidebox,.light .ex{background:#eef7fd}
+:root{--bg:#020a15;--line:#285274;--blue:#168cff;--green:#24f0b1;--text:#f4f8ff;--muted:#9bb0c6}
+*{box-sizing:border-box}body{margin:0;min-height:100vh;color:var(--text);font-family:Inter,"Noto Sans Myanmar","Segoe UI",sans-serif;background:radial-gradient(circle at 75% 0,#0d4d8d55,transparent 30%),radial-gradient(circle at 0 100%,#007b8050,transparent 25%),linear-gradient(135deg,#020711,#06162a 52%,#03101b)}
+body:before{content:"";position:fixed;inset:0;pointer-events:none;opacity:.2;background-image:linear-gradient(#168cff12 1px,transparent 1px),linear-gradient(90deg,#168cff12 1px,transparent 1px);background-size:42px 42px;mask-image:linear-gradient(#000,transparent 80%)}
+.wrap{width:min(820px,94vw);margin:auto;padding:28px 0 50px}.top{display:flex;align-items:center;gap:14px;margin-bottom:18px}.brand{font-size:44px;filter:drop-shadow(0 0 18px #19aaff55)}h1{margin:0;font-size:32px;font-weight:900}h1 b{color:#48baff}.sub{margin-top:4px;color:var(--muted);font-size:13px}.theme{margin-left:auto;width:45px;height:45px;border-radius:50%;border:1px solid var(--line);background:#09203a;color:#fff;font-size:20px;cursor:pointer}
+.card{padding:20px;background:linear-gradient(145deg,#0a2038ed,#04101fed);border:1px solid var(--line);border-radius:22px;box-shadow:0 25px 80px #0009,inset 0 1px #fff1;backdrop-filter:blur(14px)}
+.section{margin-bottom:19px}.label{font-size:15px;font-weight:850;margin-bottom:9px}.label span{color:#69bfff}
+.pair{display:grid;grid-template-columns:1fr 55px 1fr;gap:9px}.select{width:100%;padding:15px 12px;border:1px solid #335c7d;border-radius:13px;background:#061629;color:#fff;font-size:15px;outline:0}.swap{border:1px solid #315879;border-radius:13px;background:linear-gradient(145deg,#12304c,#07192c);color:#fff;font-size:22px;cursor:pointer}
+.input{width:100%;padding:17px 16px;border:1px solid #315a7b;border-radius:13px;background:#061628;color:#fff;font-size:23px;outline:0}.input:focus,.select:focus{border-color:#2aa7ff;box-shadow:0 0 0 3px #168cff1c}
+.hint{margin-top:9px;padding:12px 14px;border:1px solid #00dca57a;background:linear-gradient(145deg,#003d3544,#002a2a22);border-radius:13px;line-height:1.65;color:#dffff5;font-size:14px}.hint strong{color:var(--green);font-size:17px}
+.result{padding:19px;border-radius:16px;border:1px solid #00e5ad99;background:linear-gradient(145deg,#003c303d,#001e2529);box-shadow:0 0 35px #00dca51a}.result small{color:#b9d4d0;font-weight:750}.num{margin-top:6px;color:var(--green);font-size:clamp(35px,7vw,58px);font-weight:950;line-height:1.05;word-break:break-word;text-shadow:0 0 22px #00e5a633}.unit{margin-top:5px;font-size:23px;font-weight:900}.formula{margin-top:10px;color:#d5eee9;font-size:14px}
+.actions{display:grid;grid-template-columns:1fr 1.4fr;gap:10px;margin-top:13px}.btn{padding:14px;border-radius:12px;border:1px solid #5a7188;background:#07192b;color:#fff;font-weight:850;font-size:15px;cursor:pointer}.primary{background:linear-gradient(135deg,#087cff,#075de0);border-color:#2396ff}.btn:active,.swap:active{transform:translateY(1px)}
+.small-note{text-align:center;color:#829bb0;font-size:11px;line-height:1.6;margin-top:14px}
+@media(max-width:560px){.wrap{width:94vw;padding-top:16px}.top{gap:9px}.brand{font-size:34px}h1{font-size:24px}.sub{font-size:11px}.theme{width:42px;height:42px}.card{padding:15px;border-radius:18px}.pair{grid-template-columns:1fr 45px 1fr;gap:6px}.select{font-size:13px;padding:13px 7px}.swap{font-size:20px}.input{font-size:20px;padding:15px}.num{font-size:35px}}
+.light body{background:linear-gradient(135deg,#edf6ff,#dcecf7);color:#0c1b28}.light .card{background:#ffffffdf;border-color:#b8d0e2}.light .select,.light .input,.light .swap,.light .btn,.light .theme{background:#f5f9fc;color:#0c1b28}.light .hint{color:#104438}
 </style>
 </head>
 <body>
 <div class="wrap">
-<header class="top"><div class="brandicon">💰</div><div><h1>Currency <b>Calculator</b></h1><div class="sub">THB, MMK and CNY • Today's market rate</div></div><button class="theme" id="theme">☾</button></header>
-<div class="layout">
-<main class="glass main">
+<header class="top"><div class="brand">💰</div><div><h1>Currency <b>Calculator</b></h1><div class="sub">THB, MMK and CNY • Today's market rate</div></div><button class="theme" id="theme">☾</button></header>
+<main class="card">
 <section class="section"><div class="label">① Currency Pair <span>(ငွေကြေးရွေးချယ်ခြင်း)</span></div><div class="pair">
 <select id="from" class="select"><option value="THB">🇹🇭 THB — Thai Baht</option><option value="MMK">🇲🇲 MMK — Myanmar Kyat</option><option value="CNY">🇨🇳 CNY — Chinese Yuan</option></select>
 <button class="swap" id="swap">⇄</button>
@@ -36,24 +35,12 @@ body:before{content:"";position:fixed;inset:0;pointer-events:none;opacity:.22;ba
 <section class="section"><div class="label">③ Amount <span>(တွက်ချင်သောပမာဏ)</span></div><input id="amount" class="input" inputmode="decimal" placeholder="ပမာဏထည့်ပါ"></section>
 <section class="section"><div class="label">④ Total Result <span>(ရလဒ်)</span></div><div class="result"><small>တွက်ချက်ပြီး ရလဒ်</small><div class="num" id="result">0</div><div class="unit" id="unit">MMK</div><div class="formula" id="formula">ပမာဏနဲ့ ပေါက်စျေးထည့်လိုက်ပါ။</div></div></section>
 <div class="actions"><button class="btn" id="clear">🗑 Clear</button><button class="btn primary" id="copy">▣ Copy Result</button></div>
+<div class="small-note">ပေါက်စျေးကို User ကိုယ်တိုင်ထည့်ပြီး ချက်ချင်းတွက်ချက်နိုင်ပါတယ်။ THB မှာ 200 အောက်/အထက် Rate rule ကို အလိုအလျောက်အသုံးပြုပါတယ်။</div>
 </main>
-<aside class="glass side">
-<div style="display:flex;justify-content:space-between;align-items:center"><h2>Today's Rate Interpretation</h2><span class="badge"><i></i> LIVE CALCULATION</span></div>
-<div class="ratecard"><div class="ratehead">🇹🇭 THB → MMK <span class="dot">●</span></div><div class="ratevalue" id="thbRate">ပေါက်စျေးထည့်ပြီး အဓိပ္ပါယ်ကို ဒီမှာပြပါမယ်</div></div>
-<div class="ratecard"><div class="ratehead">🇨🇳 CNY → MMK</div><div class="ratevalue" id="cnyRate">1 CNY = Rate MMK</div></div>
-<div class="ratecard"><div class="ratehead">🇹🇭 THB → 🇨🇳 CNY</div><div class="ratevalue" id="thbCnyRate">1 THB = Rate CNY</div></div>
-<div class="guide"><h2>Rate Guide <span style="color:#5fc5ff">ⓘ</span></h2>
-<div class="guidebox"><b>🇹🇭 THB</b><br>Rate < 200 → 1 THB = Rate MMK<br>Rate ≥ 200 → 100,000 MMK = Rate THB<br><span style="color:#9eb6ca">ဥပမာ 748 → 1 THB = 133.69 MMK</span></div>
-<div class="guidebox"><b>🇨🇳 CNY</b><br>အမြဲတမ်း 1 CNY = Rate MMK<br><span style="color:#9eb6ca">ဥပမာ 630 → 1 CNY = 630 MMK</span></div>
-</div>
-<div class="example"><h2>Quick Examples</h2><div class="ex">10,000 THB × 130<br><strong>= 1,300,000 MMK</strong></div><div class="ex">50,000 THB × 100,000 ÷ 748<br><strong>= 6,684,491.98 MMK</strong></div><div class="ex">1,000 CNY × 630<br><strong>= 630,000 MMK</strong></div></div>
-<div class="note">Rate များကို App က ပုံသေမသတ်မှတ်ထားပါ။ User တစ်ယောက်ချင်းစီက မိမိအသုံးပြုမည့် ဒီနေ့ပေါက်စျေးကို ကိုယ်တိုင်ထည့်ပြီး တွက်ချက်နိုင်ပါတယ်။</div>
-</aside>
-</div>
 </div>
 <script>
-const $=id=>document.getElementById(id), from=$('from'),to=$('to'),rate=$('rate'),amount=$('amount');
-const raw=x=>String(x||'').replace(/,/g,'').trim(), n=x=>{let v=parseFloat(raw(x));return Number.isFinite(v)?v:null};
+const $=id=>document.getElementById(id),from=$('from'),to=$('to'),rate=$('rate'),amount=$('amount');
+const raw=x=>String(x||'').replace(/,/g,'').trim(),n=x=>{let v=parseFloat(raw(x));return Number.isFinite(v)?v:null};
 const fmt=x=>Number.isFinite(x)?x.toLocaleString('en-US',{minimumFractionDigits:0,maximumFractionDigits:2}):'0';
 function thbPerMmk(r){return r<200?r:100000/r}
 function updateHint(){
@@ -67,7 +54,7 @@ function updateHint(){
 }
 function calc(){
  let f=from.value,t=to.value,r=n(rate.value),a=n(amount.value),res=null,formula='';
- $('unit').textContent=t; updateHint();
+ $('unit').textContent=t;updateHint();
  if(r&&r>0&&a!==null&&a>=0&&f!==t){
   if(f==='THB'&&t==='MMK'){res=a*thbPerMmk(r);formula=r<200?fmt(a)+' THB × '+fmt(r)+' = '+fmt(res)+' MMK':fmt(a)+' THB × 100,000 ÷ '+fmt(r)+' = '+fmt(res)+' MMK'}
   if(f==='MMK'&&t==='THB'){res=a/thbPerMmk(r);formula=r<200?fmt(a)+' MMK ÷ '+fmt(r)+' = '+fmt(res)+' THB':fmt(a)+' MMK × '+fmt(r)+' ÷ 100,000 = '+fmt(res)+' THB'}
@@ -77,10 +64,6 @@ function calc(){
   if(f==='CNY'&&t==='THB'){res=a/r;formula=fmt(a)+' CNY ÷ '+fmt(r)+' = '+fmt(res)+' THB'}
  }
  $('result').textContent=fmt(res||0);$('formula').textContent=formula||'ပမာဏနဲ့ ပေါက်စျေးထည့်လိုက်ပါ။';
- const rr=n(rate.value);
- $('thbRate').textContent=rr?(rr<200?'1 THB = '+fmt(rr)+' MMK':'100,000 MMK = '+fmt(rr)+' THB (1 THB = '+fmt(thbPerMmk(rr))+' MMK)'):'ပေါက်စျေးထည့်ပြီး အဓိပ္ပါယ်ကို ဒီမှာပြပါမယ်';
- $('cnyRate').textContent=rr?'1 CNY = '+fmt(rr)+' MMK':'1 CNY = Rate MMK';
- $('thbCnyRate').textContent=rr?'1 THB = '+fmt(rr)+' CNY':'1 THB = Rate CNY';
 }
 function clean(e){let v=raw(e.target.value).replace(/[^0-9.]/g,'');let p=v.split('.');if(p.length>2)v=p.shift()+'.'+p.join('');p=v.split('.');if(p[0])p[0]=p[0].replace(/\B(?=(\d{3})+(?!\d))/g,',');e.target.value=p.join('.');calc()}
 [from,to].forEach(x=>x.addEventListener('change',calc));rate.addEventListener('input',clean);amount.addEventListener('input',clean);
