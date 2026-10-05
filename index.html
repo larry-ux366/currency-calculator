@@ -4,6 +4,8 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <meta name="theme-color" content="#061426">
+<link rel="manifest" href="manifest.json">
+<link rel="apple-touch-icon" href="icons/icon-192.png">
 <title>Currency Calculator — THB MMK CNY</title>
 <style>
 :root{--bg:#020a15;--line:#285274;--blue:#168cff;--green:#24f0b1;--text:#f4f8ff;--muted:#9bb0c6}
@@ -73,6 +75,7 @@ $('clear').onclick=()=>{rate.value='';amount.value='';calc();rate.focus()};
 $('copy').onclick=async()=>{let s=fmt(n(amount.value)||0)+' '+from.value+' = '+$('result').textContent+' '+to.value;try{await navigator.clipboard.writeText(s);alert('Copied: '+s)}catch(e){prompt('Copy result:',s)}};
 $('theme').onclick=()=>{document.documentElement.classList.toggle('light');$('theme').textContent=document.documentElement.classList.contains('light')?'☀':'☾'};
 calc();
+if ('serviceWorker' in navigator) { window.addEventListener('load', () => navigator.serviceWorker.register('./sw.js').catch(() => {})); }
 </script>
 </body>
 </html>
