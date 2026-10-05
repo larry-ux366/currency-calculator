@@ -33,9 +33,9 @@ body:before{content:"";position:fixed;inset:0;pointer-events:none;opacity:.2;bac
 </div></section>
 <section class="section"><div class="label">② Today's Rate <span>(ပေါက်စျေး)</span></div><input id="rate" class="input" inputmode="decimal" placeholder="ပေါက်စျေးထည့်ပါ"><div class="hint" id="hint">Currency Pair နဲ့ ဒီနေ့ပေါက်စျေးကို ထည့်ပါ။</div></section>
 <section class="section"><div class="label">③ Amount <span>(တွက်ချင်သောပမာဏ)</span></div><input id="amount" class="input" inputmode="decimal" placeholder="ပမာဏထည့်ပါ"></section>
-<section class="section"><div class="label">④ Total Result <span>(ရလဒ်)</span></div><div class="result"><small>တွက်ချက်ပြီး ရလဒ်</small><div class="num" id="result">0</div><div class="unit" id="unit">MMK</div><div class="formula" id="formula">ပမာဏနဲ့ ပေါက်စျေးထည့်လိုက်ပါ။</div></div></section>
+<section class="section"><div class="label">④ Total Result <span>(ရလဒ်)</span></div><div class="result"><div class="num" id="result">0</div><div class="unit" id="unit">MMK</div><div class="formula" id="formula" style="display:none"></div></div></section>
 <div class="actions"><button class="btn" id="clear">🗑 Clear</button><button class="btn primary" id="copy">▣ Copy Result</button></div>
-<div class="small-note">ပေါက်စျေးကို User ကိုယ်တိုင်ထည့်ပြီး ချက်ချင်းတွက်ချက်နိုင်ပါတယ်။ THB မှာ 200 အောက်/အထက် Rate rule ကို အလိုအလျောက်အသုံးပြုပါတယ်။</div>
+
 </main>
 </div>
 <script>
@@ -63,7 +63,7 @@ function calc(){
   if(f==='THB'&&t==='CNY'){res=a*r;formula=fmt(a)+' THB × '+fmt(r)+' = '+fmt(res)+' CNY'}
   if(f==='CNY'&&t==='THB'){res=a/r;formula=fmt(a)+' CNY ÷ '+fmt(r)+' = '+fmt(res)+' THB'}
  }
- $('result').textContent=fmt(res||0);$('formula').textContent=formula||'ပမာဏနဲ့ ပေါက်စျေးထည့်လိုက်ပါ။';
+ $('result').textContent=fmt(res||0);
 }
 function clean(e){let v=raw(e.target.value).replace(/[^0-9.]/g,'');let p=v.split('.');if(p.length>2)v=p.shift()+'.'+p.join('');p=v.split('.');if(p[0])p[0]=p[0].replace(/\B(?=(\d{3})+(?!\d))/g,',');e.target.value=p.join('.');calc()}
 [from,to].forEach(x=>x.addEventListener('change',calc));rate.addEventListener('input',clean);amount.addEventListener('input',clean);
