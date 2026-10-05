@@ -18,7 +18,7 @@ body:before{content:"";position:fixed;inset:0;pointer-events:none;opacity:.2;bac
 .result{padding:19px;border-radius:16px;border:1px solid #00e5ad99;background:linear-gradient(145deg,#003c303d,#001e2529);box-shadow:0 0 35px #00dca51a}.result small{color:#b9d4d0;font-weight:750}.num{margin-top:6px;color:var(--green);font-size:clamp(35px,7vw,58px);font-weight:950;line-height:1.05;word-break:break-word;text-shadow:0 0 22px #00e5a633}.unit{margin-top:5px;font-size:23px;font-weight:900}.formula{margin-top:10px;color:#d5eee9;font-size:14px}
 .actions{display:grid;grid-template-columns:1fr 1.4fr;gap:10px;margin-top:13px}.btn{padding:14px;border-radius:12px;border:1px solid #5a7188;background:#07192b;color:#fff;font-weight:850;font-size:15px;cursor:pointer}.primary{background:linear-gradient(135deg,#087cff,#075de0);border-color:#2396ff}.btn:active,.swap:active{transform:translateY(1px)}
 .small-note{text-align:center;color:#829bb0;font-size:11px;line-height:1.6;margin-top:14px}
-@media(max-width:560px){.wrap{width:94vw;padding-top:16px}.top{gap:9px}.brand{font-size:34px}h1{font-size:24px}.sub{font-size:11px}.theme{width:42px;height:42px}.card{padding:15px;border-radius:18px}.pair{grid-template-columns:1fr 45px 1fr;gap:6px}.select{font-size:13px;padding:13px 7px}.swap{font-size:20px}.input{font-size:20px;padding:15px}.num{font-size:35px}}
+@media(max-width:560px){.wrap{width:94vw;padding-top:16px}.top{gap:9px}.brand{font-size:34px}h1{font-size:24px}.sub{font-size:11px}.theme{width:42px;height:42px}.card{padding:15px;border-radius:18px}.pair{grid-template-columns:1fr 45px 1fr;gap:6px}.select{font-size:15px;padding:13px 8px}.swap{font-size:20px}.input{font-size:20px;padding:15px}.num{font-size:35px}}
 .light body{background:linear-gradient(135deg,#edf6ff,#dcecf7);color:#0c1b28}.light .card{background:#ffffffdf;border-color:#b8d0e2}.light .select,.light .input,.light .swap,.light .btn,.light .theme{background:#f5f9fc;color:#0c1b28}.light .hint{color:#104438}
 </style>
 </head>
@@ -27,9 +27,9 @@ body:before{content:"";position:fixed;inset:0;pointer-events:none;opacity:.2;bac
 <header class="top"><div class="brand">💰</div><div><h1>Currency <b>Calculator</b></h1><div class="sub">THB, MMK and CNY • Today's market rate</div></div><button class="theme" id="theme">☾</button></header>
 <main class="card">
 <section class="section"><div class="label">① Currency Pair <span>(ငွေကြေးရွေးချယ်ခြင်း)</span></div><div class="pair">
-<select id="from" class="select"><option value="THB">🇹🇭 THB — Thai Baht</option><option value="MMK">🇲🇲 MMK — Myanmar Kyat</option><option value="CNY">🇨🇳 CNY — Chinese Yuan</option></select>
+<select id="from" class="select"><option value="THB">🇹🇭 THB</option><option value="MMK">🇲🇲 MMK</option><option value="CNY">🇨🇳 CNY</option></select>
 <button class="swap" id="swap">⇄</button>
-<select id="to" class="select"><option value="MMK">🇲🇲 MMK — Myanmar Kyat</option><option value="THB">🇹🇭 THB — Thai Baht</option><option value="CNY">🇨🇳 CNY — Chinese Yuan</option></select>
+<select id="to" class="select"><option value="MMK">🇲🇲 MMK</option><option value="THB">🇹🇭 THB</option><option value="CNY">🇨🇳 CNY</option></select>
 </div></section>
 <section class="section"><div class="label">② Today's Rate <span>(ပေါက်စျေး)</span></div><input id="rate" class="input" inputmode="decimal" placeholder="ပေါက်စျေးထည့်ပါ"><div class="hint" id="hint">Currency Pair နဲ့ ဒီနေ့ပေါက်စျေးကို ထည့်ပါ။</div></section>
 <section class="section"><div class="label">③ Amount <span>(တွက်ချင်သောပမာဏ)</span></div><input id="amount" class="input" inputmode="decimal" placeholder="ပမာဏထည့်ပါ"></section>
