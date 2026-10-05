@@ -17,7 +17,7 @@ body:before{content:"";position:fixed;inset:0;pointer-events:none;opacity:.2;bac
 .hint{margin-top:9px;padding:12px 14px;border:1px solid #00dca57a;background:linear-gradient(145deg,#003d3544,#002a2a22);border-radius:13px;line-height:1.65;color:#dffff5;font-size:14px}.hint strong{color:var(--green);font-size:17px}
 .result{padding:19px;border-radius:16px;border:1px solid #00e5ad99;background:linear-gradient(145deg,#003c303d,#001e2529);box-shadow:0 0 35px #00dca51a}.result small{color:#b9d4d0;font-weight:750}.num{margin-top:6px;color:var(--green);font-size:clamp(35px,7vw,58px);font-weight:950;line-height:1.05;word-break:break-word;text-shadow:0 0 22px #00e5a633}.unit{margin-top:5px;font-size:23px;font-weight:900}.formula{margin-top:10px;color:#d5eee9;font-size:14px}
 .actions{display:grid;grid-template-columns:1fr 1.4fr;gap:10px;margin-top:13px}.btn{padding:14px;border-radius:12px;border:1px solid #5a7188;background:#07192b;color:#fff;font-weight:850;font-size:15px;cursor:pointer}.primary{background:linear-gradient(135deg,#087cff,#075de0);border-color:#2396ff}.btn:active,.swap:active{transform:translateY(1px)}
-.small-note{text-align:center;color:#829bb0;font-size:11px;line-height:1.6;margin-top:14px}
+.contact{text-align:center;margin-top:18px}.contact a{display:inline-flex;align-items:center;gap:10px;padding:10px 16px;border:1px solid #285274;border-radius:14px;background:#071a2d;color:#fff;text-decoration:none;box-shadow:0 10px 30px #0004}.contact a:hover{border-color:#29a9ff;transform:translateY(-1px)}.contact .tg{display:grid;place-items:center;width:34px;height:34px;border-radius:50%;background:#168cff;font-size:18px}.contact b{display:block;font-size:14px}.contact small{display:block;color:#7fc9f5;font-size:12px;margin-top:2px}
 @media(max-width:560px){.wrap{width:94vw;padding-top:16px}.top{gap:9px}.brand{font-size:34px}h1{font-size:24px}.sub{font-size:11px}.theme{width:42px;height:42px}.card{padding:15px;border-radius:18px}.pair{grid-template-columns:1fr 45px 1fr;gap:6px}.select{font-size:15px;padding:13px 8px}.swap{font-size:20px}.input{font-size:20px;padding:15px}.num{font-size:35px}}
 .light body{background:linear-gradient(135deg,#edf6ff,#dcecf7);color:#0c1b28}.light .card{background:#ffffffdf;border-color:#b8d0e2}.light .select,.light .input,.light .swap,.light .btn,.light .theme{background:#f5f9fc;color:#0c1b28}.light .hint{color:#104438}
 </style>
@@ -37,6 +37,7 @@ body:before{content:"";position:fixed;inset:0;pointer-events:none;opacity:.2;bac
 <div class="actions"><button class="btn" id="clear">🗑 Clear</button><button class="btn primary" id="copy">▣ Copy Result</button></div>
 
 </main>
+<footer class="contact"><a href="https://t.me/ktkt369" target="_blank" rel="noopener noreferrer"><span class="tg">✈</span><span><b>အကြံပေးပြောကြားရန်</b><small>@ktkt369</small></span></a></footer>
 </div>
 <script>
 const $=id=>document.getElementById(id),from=$('from'),to=$('to'),rate=$('rate'),amount=$('amount');
